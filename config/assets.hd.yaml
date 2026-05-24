@@ -9,9 +9,9 @@ files:
         vram: 0x80010000
         assets:
           - [0x0, skip]
-          - [0x1C018, palette, kanjiclut, 256]
-          - [0x1C218, rawgfx, D_8002BA18, 128, 32, 4]
-          - [0x1CA18, skip]
+          - [0x1E85C, palette, kanjiclut, 256]
+          - [0x1EA18, rawgfx, D_8002BA18, 128, 32, 4]
+          - [0x1F218, skip]
   - target: disks/pspeu/PSP_GAME/USRDIR/res/ps/hdbin/dra.bin
     asset_path: assets/dra
     src_path: src/dra

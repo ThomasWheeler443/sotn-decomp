@@ -57,9 +57,10 @@ segments:
       - [0x14F4, .rodata, psxsdk/libspu/s_si]
       - [0x1534, asm, psxsdk/2mbyte]
       - [0x15F8, c, main]
-      - [0x1760, asm]
-      - [0x17F4, c, psxsdk/libgpu/ext]
-      - [0x1C38, c, psxsdk/libgpu/font]
+      
+      - [0x1760, c, psxsdk/libgpu/sys]
+      - [0x4464, c, psxsdk/libgpu/prim]
+      - [0x554C, c, psxsdk/libgpu/ext]
       
       - [0x576C, c, psxsdk/libapi/a81]
       - [0x577C, c, psxsdk/libapi/a51]
@@ -75,47 +76,32 @@ segments:
       - [0x581C, c, psxsdk/libapi/a52]
       - [0x582C, c, psxsdk/libapi/a50]
       - [0x583C, c, psxsdk/libapi/a66]
-
-
+      
+      - [0x584C, c, psxsdk/libetc/intr]
+      
       - [0x5DF4, c, psxsdk/libapi/a36]
       - [0x5E04, c, psxsdk/libapi/a25]
       - [0x5E14, c, psxsdk/libapi/a37]
       - [0x5E24, c, psxsdk/libapi/l10]
       - [0x5E34, c, psxsdk/libapi/c114]
       - [0x5E44, c, psxsdk/libapi/a23]
+      
+      - [0x5E54, c, psxsdk/libetc/intr_dma]
+      - [0x6198, c, psxsdk/libetc/pad]
+
+      - [0x6248, c, psxsdk/libapi/a22]
+      - [0x6258, c, psxsdk/libapi/a20]
+      - [0x6268, c, psxsdk/libapi/a21]
+
+      - [0x6278, c, psxsdk/libetc/vmode]
+      - [0x62A0, c, psxsdk/libetc/intr_vb]
+      - [0x6400, c, psxsdk/libetc/vsync]
+
+      - [0x65E0, c, psxsdk/libc/c51]
 
       - [0x1D6FC, c, psxsdk/libapi/a10]
-      
 
-      # - [0x192C, c, psxsdk/libgpu/ext]
-      # - [0x1B4C, c, psxsdk/libgpu/font]
-      # - [0x2554, c, psxsdk/libgpu/prim]
-      # - [0x2C34, c, psxsdk/libgpu/sys]
-      # - [0x5938, c, psxsdk/libapi/c57]
-      # - [0x5948, c, psxsdk/libapi/c66]
-      # - [0x5958, c, psxsdk/libapi/c67]
-      # - [0x5968, c, psxsdk/libapi/c73]
-      # - [0x5978, c, psxsdk/libapi/c112]
-      # - [0x5988, c, psxsdk/libapi/a50]
-      # - [0x5998, c, psxsdk/libapi/a51]
-      # - [0x59A8, c, psxsdk/libapi/a52]
-      # - [0x59B8, c, psxsdk/libapi/a53]
-      # - [0x59C8, c, psxsdk/libapi/a54]
-      # - [0x59D8, c, psxsdk/libapi/a65]
-      # - [0x59E8, c, psxsdk/libapi/a66]
-      # - [0x59F8, c, psxsdk/libapi/a67]
-      # - [0x5A08, c, psxsdk/libapi/a69]
-      # - [0x5A18, c, psxsdk/libapi/a81]
-      # - [0x5A28, c, psxsdk/libapi/a91]
-      # - [0x5A28, c, psxsdk/libapi/a91]
-      # - [0x5A38, c, psxsdk/libetc/pad]
-      # - [0x5AD8, c, psxsdk/libapi/a20]
-      # - [0x5AE8, c, psxsdk/libapi/a21]
-      # - [0x5AF8, c, psxsdk/libapi/a22]
-      # - [0x5B08, c, psxsdk/libetc/vsync]
-      # - [0x5CEC, c, psxsdk/libapi/l10]
-      # - [0x5CFC, c, psxsdk/libetc/intr]
-      # - [0x640C, c, psxsdk/libapi/c114]
+      
 
       # - [0x641C, c, psxsdk/libapi/a23]
       # - [0x642C, c, psxsdk/libapi/a24]
@@ -277,6 +263,7 @@ segments:
       # - [0x19A18, c, psxsdk/libspu/s_m_util]
       # - [0x19B00, c, psxsdk/libspu/s_srmp]
       # - [0x1A4E0, c, psxsdk/libspu/s_crwa]
+
       # - [0x1A67C, c, psxsdk/libapi/a10]
       # - [0x1A68C, c, psxsdk/libspu/s_si]
       # - [0x1A7BC, c, psxsdk/libspu/s_sic]
