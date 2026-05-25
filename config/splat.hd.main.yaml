@@ -99,7 +99,7 @@ segments:
       - [0x6654, c, psxsdk/libc/c25]
       - [0x6664, c, psxsdk/libc/sprintf]
       - [0x73E4, c, psxsdk/libc/c46]
-      - [0x73F4, c] # psxsdk/libc/c44 ?
+      - [0x73F4, asm] # psxsdk/libc/c44 ?
       - [0x7404, c, psxsdk/libc/c52]
       - [0x7414, c, psxsdk/libc/c47]
       - [0x7424, c, psxsdk/libc/a56]
@@ -111,16 +111,37 @@ segments:
       - [0x74A4, c, psxsdk/libcard/a75]
       - [0x74B4, c, psxsdk/libapi/c112]
       - [0x74C4, c, psxsdk/libcard/a80]
-      - [0x74D4, c, st/sel/libpress]
-      - [0x7B3C, c] 
+      - [0x74D4, asm] #st/sel/libpress
+      - [0x7B3C, asm] 
       - [0x84B4, c, psxsdk/libapi/counter]
       - [0x8624, c, psxsdk/libgs/gs_007]
       - [0x865C, c, psxsdk/libgs/gs_009]
-      - [0x8680, c]
+      - [0x8680, asm]
       - [0x933C, c, psxsdk/libgte/rcossin]
-      - [0x93B0, c] # Assorted Matrix Functions?
-      - [0xA280, c] # GTE functions
-      - [0xAFA0, c]
+      - [0x93B0, asm] # Assorted Matrix Functions?
+      - [0xA280, asm] # GTE functions
+      - [0xA684, asm, psxsdk/libgte/RotAverageNclip3_1]
+      - [0xA724, asm, psxsdk/libgte/RotAverageNclip4]
+      - [0xA7D4, asm]
+      - [0xAAB0, asm, psxsdk/libgte/ColorMatDpq]
+      - [0xAAF0, asm, psxsdk/libgte/ColorMatCol]
+      - [0xAB30, asm] # Trap instr issues?
+      - [0xACB8, asm]
+      - [0xAD20, asm, psxsdk/libgte/LoadAverage12]
+      - [0xAD70, asm, psxsdk/libgte/LoadAverage0]
+      - [0xADC0, asm]
+
+      - [0xB418, asm, psxsdk/libgte/SetVertex0]
+      - [0xB428, asm, psxsdk/libgte/SetVertex1]
+      - [0xB438, asm, psxsdk/libgte/SetVertex2]
+      - [0xB448, asm, psxsdk/libgte/SetVertexTri]
+      - [0xB468, asm, psxsdk/libgte/SetVertexRGB]
+      - [0xB478, asm, psxsdk/libgte/SetVertexRGBTri]
+      - [0xB488, asm]
+      - [0xB4A8, asm, psxsdk/libgte/SetBackColor]
+      - [0xB4C8, asm, psxsdk/libgte/SetFarColor]
+      - [0xB4E8, asm]
+
       - [0xD4A0, c, psxsdk/libcd/bios]
       - [0xF418, c, psxsdk/libcd/event]
       - [0xF520, c, psxsdk/libapi/a07]
@@ -130,14 +151,14 @@ segments:
       - [0xF6B4, c, psxsdk/libcd/iso9660]
       - [0x100BC, c, psxsdk/libc/c23]
       - [0x100CC, c, psxsdk/libc/c24]
-      - [0x100DC, c, psxsdk/libc/c_011]
+      - [0x100DC, asm] # psxsdk/libcd/c_011
       - [0x10C14, c, psxsdk/libcd/c_008]
       - [0x10C54, c, psxsdk/libcd/c_010]
       - [0x10CA4, c, psxsdk/libcd/c_002]
       - [0x10DC8, c, psxsdk/libcd/c_004]
-      - [0x10E30, c]
+      - [0x10E30, asm]
       - [0x10EEC, c, psxsdk/libsnd/vs_vtbp]
-      - [0x1105C, c]
+      - [0x1105C, asm]
       - [0x110FC, c, psxsdk/libspu/s_sr]
       - [0x11250, c, psxsdk/libsnd/ut_roff]
       - [0x11270, c, psxsdk/libsnd/ut_ron]
@@ -146,13 +167,20 @@ segments:
       - [0x115F0, c, psxsdk/libsnd/ssstart]
       - [0x118C0, c, psxsdk/libsnd/ssend]
       - [0x11964, c, psxsdk/libsnd/ssquit]
-      - [0x11984, c] # _SsTrapIntrVSync and _SsSeqCalledTbyT_1per2
-      - [0x11A00, c, psxsdk/libsnd/vm_don]
-      - [0x11A14, c, psxsdk/libsnd/vm_doff]
-
+      - [0x11984, asm] # _SsTrapIntrVSync and _SsSeqCalledTbyT_1per2
+      - [0x11A00, c, psxsdk/libsnd/vs_mono]
+      - [0x11A24, c, psxsdk/libsnd/ut_ron]
+      - [0x11A44, c, psxsdk/libsnd/ut_roff]
+      - [0x11A64, c, psxsdk/libsnd/ut_rev]
+      - [0x11B18, c, psxsdk/libsnd/ut_rdep]
+      - [0x11BB0, c, psxsdk/libsnd/ut_rfb]
+      - [0x11BF0, c, psxsdk/libsnd/ut_rdel]
+      - [0x11C30, c, psxsdk/libsnd/vs_vfb]
+      - [0x11CA8, c, psxsdk/libsnd/vmanager]
+      - [0x16A9C, asm]
 
       - [0x1D6FC, c, psxsdk/libapi/a10]
-      - [0x1D70C, c]
+      - [0x1D70C, asm]
 
       - [0x1ECC0, data]
       - [0x381A0, bss]
