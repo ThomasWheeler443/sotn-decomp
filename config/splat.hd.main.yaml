@@ -1,0 +1,44 @@
+options:
+  platform:     psx
+  basename:     main
+  base_path:    ..
+  build_path:   build/hd
+  target_path:  disks/pspeu/PSP_GAME/USRDIR/res/ps/hdbin/main.exe
+  asm_path:     asm/hd/main
+  asset_path:   assets/main/hd
+  src_path:     src/main/hd
+  ld_script_path: build/hd/main.ld
+  compiler:     GCC
+  symbol_addrs_path:
+    - config/symbols.hd.txt
+    - config/symbols.hd.main.txt
+  undefined_funcs_auto_path: build/hd/config/undefined_funcs_auto.hd.main.txt
+  undefined_syms_auto_path:  build/hd/config/undefined_syms_auto.hd.main.txt
+  find_file_boundaries: yes
+  use_legacy_include_asm: no
+  asm_jtbl_label_macro: jlabel
+  disassemble_all: true
+  global_vram_start: 0x80010000
+  section_order:
+    - ".rodata"
+    - ".text"
+    - ".data"
+    - ".bss"
+  ld_generate_symbol_per_data_segment: true
+sha1: 44b27cbb9566a21b82b9a11852046b6d9fd4a893 
+segments:
+  - [0x800, header]
+  - name: main
+    type: code
+    start: 0x00000800
+    vram:  0x80010000
+    align: 4
+    subalign: 4
+    subsegments:
+      - [0x800, rodata]
+      - [0x15F4, c]
+      # - [0x16B8, c, hd]
+      - [0x1EF1C, data]
+      - [0x3819C, bss]
+  - [0x9E800]
+

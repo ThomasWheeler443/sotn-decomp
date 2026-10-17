@@ -844,8 +844,9 @@ with open(build_ninja, "w") as f:
         " | iconv --from-code=UTF-8 --to-code=Shift-JIS"
         " | bin/cc1-psx-26 -G0 -w -funsigned-char -fpeephole -ffunction-cse -fpcc-struct-return -fcommon -fverbose-asm -msoft-float -g -quiet -mcpu=3000 -fgnu-linker -mgas -gcoff $cc_flags"
         " | python3 tools/maspsx/maspsx.py --expand-div --aspsx-version=$aspsx_ver"
-        " | mipsel-linux-gnu-as -Iinclude -march=r3000 -mtune=r3000 -no-pad-sections -O1 -G0 -o $out"
+        " | mipsel-linux-gnu-as -Iinclude -march=mips2 -mtune=r3000 -no-pad-sections -O1 -G0 -o $out"
     )
+    # NOTE: Setting march to mips2 is a TEMPORARY fix. Change before merge
     nw.rule(
         "psx-cc",
         depfile="$out.d",
@@ -855,7 +856,7 @@ with open(build_ninja, "w") as f:
     )
     nw.rule(
         "psx-as",
-        command="mipsel-linux-gnu-as -Iinclude -march=r3000 -mtune=r3000 -no-pad-sections -O1 -G0 -o $out $in",
+        command="mipsel-linux-gnu-as -Iinclude -march=mips2 -mtune=r3000 -no-pad-sections -O1 -G0 -o $out $in",
         description="psx as $in",
     )
     nw.rule(
