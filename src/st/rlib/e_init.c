@@ -22,11 +22,11 @@ void EntityLockCamera(Entity* self);
 void EntityUnkId13(Entity* self);
 void EntityExplosionVariants(Entity* self);
 void EntityGreyPuff(Entity* self);
-void func_us_801AF280_from_lib(Entity* self);
-void func_us_801AF538_from_lib(Entity* self);
-void func_us_801AF7B8_from_lib(Entity* self);
-void func_us_801AFA80_from_lib(Entity* self);
-void func_us_801AE8E8_from_lib(Entity* self);
+void EntityBackgroundBookcase(Entity* self);
+void EntityBackgroundFurniture(Entity* self);
+void EntityBackgroundShadow(Entity* self);
+void EntityDistantBookshelves(Entity* self);
+void EntityThickBookcase(Entity* self);
 void func_us_801AE7AC_from_lib(Entity* self);
 void func_us_801ADBE8(Entity* self);
 void EntityHarpyKick(Entity* self);
@@ -40,8 +40,8 @@ void func_us_801AF448(Entity* self);
 void func_us_801AF9E8(Entity* self);
 void EntityExplosionPuffOpaque(Entity* self);
 void func_us_801AFC88(Entity* self);
-void func_us_801AE84C_from_lib(Entity* self);
-void func_us_801BAF60_from_lib(Entity* self);
+void EntityBreakableDebris(Entity* self);
+void EntityCandleTable(Entity* self);
 
 PfnEntityUpdate EntityUpdates[] = {
     EntityBreakable,
@@ -65,11 +65,11 @@ PfnEntityUpdate EntityUpdates[] = {
     EntityUnkId13,
     EntityExplosionVariants,
     EntityGreyPuff,
-    func_us_801AF280_from_lib,
-    func_us_801AF538_from_lib,
-    func_us_801AF7B8_from_lib,
-    func_us_801AFA80_from_lib,
-    func_us_801AE8E8_from_lib,
+    EntityBackgroundBookcase,
+    EntityBackgroundFurniture,
+    EntityBackgroundShadow,
+    EntityDistantBookshelves,
+    EntityThickBookcase,
     func_us_801AE7AC_from_lib,
     func_us_801ADBE8,
     EntityHarpyKick,
@@ -83,8 +83,8 @@ PfnEntityUpdate EntityUpdates[] = {
     func_us_801AF9E8,
     EntityExplosionPuffOpaque,
     func_us_801AFC88,
-    func_us_801AE84C_from_lib,
-    func_us_801BAF60_from_lib,
+    EntityBreakableDebris,
+    EntityCandleTable,
 };
 
 // clang-format off
@@ -108,5 +108,5 @@ EInit D_us_80180688 = {ANIMSET_OVL(4), 0x00, 0x53, PAL_TIN_MAN, ENEMY_PARTICLE};
 EInit g_EInitScarecrow = {ANIMSET_OVL(5), 0x00, 0x54, PAL_SCARECROW, ENEMY_SCARECROW};
 EInit D_us_801806A0 = {ANIMSET_OVL(5), 0x00, 0x54, PAL_SCARECROW, ENEMY_INTERACTABLE};
 EInit g_EInitSchmoo = {ANIMSET_OVL(5), 0x08, 0x54, PAL_SCHMOO, ENEMY_SCHMOO};
-EInit D_us_801806B8 = {ANIMSET_OVL(6), 0x00, 0x50, PAL_UNK_20F, ENEMY_INTERACTABLE};
+EInit g_EInitCandleTable = {ANIMSET_OVL(6), 0x00, 0x50, PAL_UNK_20F, ENEMY_INTERACTABLE};
 // clang-format on

@@ -1019,6 +1019,50 @@ SET(SOURCE_FILES_BOSS_BO1
     src/boss/bo1/unk_210A8.c
 )
 
+SET(SOURCE_FILES_BOSS_BO3
+    src/pc/bosses/boss_bo3.c
+    src/boss/bo3/background_block_init.c
+    src/boss/bo3/bss.c
+    src/boss/bo3/cavern_bg_effects.c
+    src/boss/bo3/collision.c
+    src/boss/bo3/create_entity.c
+    src/boss/bo3/d_prize_drops.c
+    src/boss/bo3/e_breakable.c
+    src/boss/bo3/e_breakable_wall.c
+    src/boss/bo3/e_collect.c
+    src/boss/bo3/e_explosion_puff_opaque.c
+    src/boss/bo3/e_init.c
+    src/boss/bo3/e_life_up.c
+    src/boss/bo3/e_lock_camera.c
+    src/boss/bo3/e_misc.c
+    src/boss/bo3/e_particles.c
+    src/boss/bo3/e_red_door.c
+    src/boss/bo3/e_red_door_tiles.c
+    src/boss/bo3/e_room_bg.c
+    src/boss/bo3/e_room_fg.c
+    src/boss/bo3/e_scylla.c
+    src/boss/bo3/e_scylla_wyrm.c
+    src/boss/bo3/e_stage_name.c
+    src/boss/bo3/gen/e_laydef.c
+    src/boss/bo3/gen/e_layout.c
+    src/boss/bo3/gen/rooms.c
+    src/boss/bo3/gen/us/sprites.c
+    src/boss/bo3/graphics_banks.c
+    src/boss/bo3/header.c
+    src/boss/bo3/layers.c
+    src/boss/bo3/pal_unk.c
+    src/boss/bo3/palette_def.c
+    src/boss/bo3/popup.c
+    src/boss/bo3/prim_helpers.c
+    src/boss/bo3/sprite_banks.c
+    src/boss/bo3/st_common.c
+    src/boss/bo3/st_update.c
+    src/boss/bo3/stage_data.c
+    src/boss/bo3/tilemaps.c
+    src/boss/bo3/unk_26370.c
+    src/boss/bo3/water_effects.c
+)
+
 SET(SOURCE_FILES_BOSS_BO4
     src/pc/bosses/boss_bo4.c
     src/boss/bo4/background_block_init.c
@@ -1194,6 +1238,46 @@ SET(SOURCE_FILES_BOSS_RBO4
     src/boss/rbo4/create_entity.c
     src/boss/rbo4/popup.c
     src/boss/rbo4/bss.c
+)
+
+SET(SOURCE_FILES_BOSS_RBO7
+    src/pc/bosses/boss_rbo7.c
+    src/boss/rbo7/header.c
+    src/boss/rbo7/sprite_banks.c
+    src/boss/rbo7/palette_def.c
+    src/boss/rbo7/layers.c
+    src/boss/rbo7/graphics_banks.c
+    src/boss/rbo7/gen/e_laydef.c
+    src/boss/rbo7/e_init.c
+    src/boss/rbo7/background_block_init.c
+    src/boss/rbo7/e_red_door_tiles.c
+    src/boss/rbo7/e_lock_camera.c
+    src/boss/rbo7/e_breakable.c
+    src/boss/rbo7/d_prize_drops.c
+    src/boss/rbo7/e_boss_doors.c
+    src/boss/rbo7/bossfight.c
+    src/boss/rbo7/e_akmodan_ii.c
+    src/boss/rbo7/st_update.c
+    src/boss/rbo7/collision.c
+    src/boss/rbo7/e_red_door.c
+    src/boss/rbo7/st_common.c
+    src/boss/rbo7/e_collect.c
+    src/boss/rbo7/e_misc.c
+    src/boss/rbo7/e_particles.c
+    src/boss/rbo7/e_room_fg.c
+    src/boss/rbo7/gen/rooms.c
+    src/boss/rbo7/e_life_up.c
+    src/boss/rbo7/gen/e_layout.c
+    src/boss/rbo7/stage_data.c
+    src/boss/rbo7/pal_unk.c
+    src/boss/rbo7/tilemaps.c
+    src/boss/rbo7/gen/us/sprites.c
+    src/boss/rbo7/e_stage_name.c
+    src/boss/rbo7/prim_helpers.c
+    src/boss/rbo7/e_room_bg.c
+    src/boss/rbo7/create_entity.c
+    src/boss/rbo7/popup.c
+    src/boss/rbo7/bss.c
 )
 
 set(SOURCE_FILES_STAGE_RWRP
@@ -1566,11 +1650,13 @@ add_overlay(no3 ${SOURCE_FILES_STAGE_NO3})
 add_overlay(lib ${SOURCE_FILES_STAGE_LIB})
 add_overlay(mad ${SOURCE_FILES_STAGE_MAD})
 add_overlay(bo1 ${SOURCE_FILES_BOSS_BO1})
+add_overlay(bo3 ${SOURCE_FILES_BOSS_BO3})
 add_overlay(rcen ${SOURCE_FILES_STAGE_RCEN})
+add_overlay(rchi ${SOURCE_FILES_STAGE_RCHI})
 add_overlay(rbo0 ${SOURCE_FILES_BOSS_RBO0})
 add_overlay(rbo3 ${SOURCE_FILES_BOSS_RBO3})
 add_overlay(rbo4 ${SOURCE_FILES_BOSS_RBO4})
-add_overlay(rchi ${SOURCE_FILES_STAGE_RCHI})
+add_overlay(rbo7 ${SOURCE_FILES_BOSS_RBO7})
 
 foreach(id 000 002 007 008 010 012 034 035 037 040 041 043 045 046 050 051 052)
     add_overlay(w0_${id} src/weapon/w_${id}.c)

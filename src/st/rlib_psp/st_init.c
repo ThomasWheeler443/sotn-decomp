@@ -9,11 +9,11 @@ void InitEntityIds(void) {
     SET_E_ID(UNK_ID13);
     SET_E_ID(EXPLOSION_VARIANTS);
     SET_E_ID(GREY_PUFF);
-    SET_E_ID(UNK_16);
-    SET_E_ID(UNK_17);
-    SET_E_ID(UNK_18);
-    SET_E_ID(UNK_19);
-    SET_E_ID(UNK_1A);
+    SET_E_ID(BG_BOOKCASE);
+    SET_E_ID(BG_FURNITURE);
+    SET_E_ID(BG_SHADOW);
+    SET_E_ID(DISTANT_SHELVES);
+    SET_E_ID(THICK_BOOKCASE);
     SET_E_ID(UNK_1B);
     SET_E_ID(UNK_1C);
     SET_E_ID(HARPY_KICK);
@@ -28,7 +28,7 @@ void InitEntityIds(void) {
     SET_E_ID(EXPLODE_PUFF_OPAQUE);
     SET_E_ID(UNK_27);
     SET_E_ID(UNK_28);
-    SET_E_ID(UNK_29);
+    SET_E_ID(CANDLE_TABLE);
 }
 
 extern LayoutEntity* D_8D2DFC8;

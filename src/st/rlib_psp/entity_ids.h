@@ -7,11 +7,11 @@ extern s32 E_ID(LOCK_CAMERA);
 extern s32 E_ID(UNK_ID13);
 extern s32 E_ID(EXPLOSION_VARIANTS);
 extern s32 E_ID(GREY_PUFF);
-extern s32 E_ID(UNK_16);
-extern s32 E_ID(UNK_17);
-extern s32 E_ID(UNK_18);
-extern s32 E_ID(UNK_19);
-extern s32 E_ID(UNK_1A);
+extern s32 E_ID(BG_BOOKCASE);
+extern s32 E_ID(BG_FURNITURE);
+extern s32 E_ID(BG_SHADOW);
+extern s32 E_ID(DISTANT_SHELVES);
+extern s32 E_ID(THICK_BOOKCASE);
 extern s32 E_ID(UNK_1B);
 extern s32 E_ID(UNK_1C);
 extern s32 E_ID(HARPY_KICK);
@@ -26,6 +26,6 @@ extern s32 E_ID(UNK_25);
 extern s32 E_ID(EXPLODE_PUFF_OPAQUE);
 extern s32 E_ID(UNK_27);
 extern s32 E_ID(UNK_28);
-extern s32 E_ID(UNK_29);
+extern s32 E_ID(CANDLE_TABLE);
 
 #endif

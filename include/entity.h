@@ -3096,6 +3096,30 @@ typedef struct {
 
 typedef struct {
     /* 0x7C */ Primitive* prim;
+    /* 0x80 */ s16 timer;
+    /* 0x82 */ s16 : 16;
+    /* 0x84 */ u8 unk84;
+    /* 0x85 */ u8 : 8;
+    /* 0x86 */ u8 unk86;
+    /* 0x87 */ u8 grabbing;
+    /* 0x88 */ s32 : 32;
+    /* 0x8C */ s32 : 32;
+    /* 0x90 */ s32 : 32;
+    /* 0x94 */ s32 : 32;
+    /* 0x98 */ s32 : 32;
+    /* 0x9C */ s16 savedTileX;
+    /* 0x9E */ s16 savedTileWidth;
+    /* 0xA0 */ s16 savedTileY;
+    /* 0xA2 */ s16 savedTileHeight;
+    /* 0xA4 */ u16 baseZPriority;
+    /* 0xA6 */ s16 : 16;
+    /* 0xA8 */ s32 : 32;
+    /* 0xAC */ Primitive* deathPrim;
+    /* 0xB0 */ s16 deathY;
+} ET_AkmodanII;
+
+typedef struct {
+    /* 0x7C */ Primitive* prim;
     /* 0x80 */ s16 unk80;
 } ET_801B8D30;
 
@@ -3267,6 +3291,23 @@ typedef struct {
     /* 0x82 */ s16 unk82;
     /* 0x84 */ s32 clut;
 } ET_801C12B0;
+
+typedef struct {
+    /* 0x7C */ struct Primitive* prim;
+    /* 0x80 */ s16 timer;
+    /* 0x82 */ s16 angle;
+    /* 0x84 */ u8 count;
+    /* 0x85 */ u8 tailAttack;
+    /* 0x86 */ u8 flip;
+    /* 0x87 */ u8 : 8;
+    /* 0x88 */ s32 : 32;
+    /* 0x8C */ s16 orbAngle;
+    /* 0x8E */ s16 : 16;
+    /* 0x90 */ u8 pad[0xC];
+    /* 0x9C */ struct Entity* target;
+    /* 0xA0 */ struct Primitive* curPrim;
+    /* 0xA4 */ u8 splashed;
+} ET_Scylla;
 
 typedef struct {
     /* 0x7C */ struct Primitive* prim;
@@ -4844,6 +4885,7 @@ typedef union { // offset=0x7C
     ET_Clouds clouds;
     ET_TheCreature theCreature;
     ET_TheCreatureFlames theCreatureFlames;
+    ET_AkmodanII akmodanII;
     ET_801C0B9C et_801C0B9C;
     ET_unkDoor unkDoor;
     ET_FrozenShade frozenShade;
@@ -4855,6 +4897,7 @@ typedef union { // offset=0x7C
     ET_SurfacingWater et_surfacingWater;
     ET_WaterAlcove et_waterAlcove;
     ET_801C12B0 et_801C12B0;
+    ET_Scylla scylla;
     ET_BonePillar bonePillar;
     ET_801C4520 et_801C4520;
     ET_801C4980 et_801C4980;
