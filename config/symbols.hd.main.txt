@@ -1,1 +1,5 @@
-.L80010F38 = 0x80010F38;
+__main = 0x80010A34;
+start = 0x80010D3C;
+stup1 = 0x80010D60;
+stup0 = 0x80010DDC;
+main = 0x80010DF8;

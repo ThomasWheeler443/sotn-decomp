@@ -10,7 +10,6 @@ options:
   ld_script_path: build/hd/main.ld
   compiler:     GCC
   symbol_addrs_path:
-    - config/symbols.hd.txt
     - config/symbols.hd.main.txt
   undefined_funcs_auto_path: build/hd/config/undefined_funcs_auto.hd.main.txt
   undefined_syms_auto_path:  build/hd/config/undefined_syms_auto.hd.main.txt
@@ -36,8 +35,8 @@ segments:
     subalign: 4
     subsegments:
       - [0x800, rodata]
-      - [0x15F4, c]
-      # - [0x16B8, c, hd]
+      - [0x1534, asm, psxsdk/2mbyte]
+      - [0x15F8, c]
       - [0x1EF1C, data]
       - [0x3819C, bss]
   - [0x9E800]
