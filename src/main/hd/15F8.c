@@ -850,11 +850,9 @@ INCLUDE_ASM("main/nonmatchings/15F8", func_80022560);
 
 INCLUDE_ASM("main/nonmatchings/15F8", func_80022660);
 
-void func_80022818(void) {
-}
+void func_80022818(void) {}
 
-void func_80022820(void) {
-}
+void func_80022820(void) {}
 
 INCLUDE_ASM("main/nonmatchings/15F8", func_80022828);
 
@@ -886,8 +884,7 @@ INCLUDE_ASM("main/nonmatchings/15F8", func_800245F4);
 
 INCLUDE_ASM("main/nonmatchings/15F8", func_800246E0);
 
-void func_80024714(void) {
-}
+void func_80024714(void) {}
 
 INCLUDE_ASM("main/nonmatchings/15F8", func_8002471C);
 
