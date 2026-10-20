@@ -16,8 +16,11 @@ enum Palettes {
     PAL_CASTLE_WALL_2 = 0xC8,
     PAL_ARCHER = 0x212,
     PAL_SPECTRAL_SWORD = 0x215,
+    PAL_SNIPER_OF_GOTH = 0x224,
+    PAL_IMP = 0x22D,
     PAL_BREAKABLE = 0x230,
-    PAL_BREAKABLE_DEBRIS = 0x234
+    PAL_BREAKABLE_DEBRIS = 0x234,
+    PAL_BLACK_PANTHER = 0x238
 };
 
 enum EntityID {
@@ -59,8 +62,8 @@ enum EntityID {
     E_UNK_23,               // EntitySpectralSwordAura
     E_UNK_24,               // func_us_801C17E8
     E_UNK_25,               // func_us_801C1DE8
-    E_UNK_26,               // func_us_801C2418
-    E_UNK_27,               // func_us_801C3580
+    E_SNIPER_OF_GOTH,       // EntitySniperOfGoth
+    E_SNIPER_OF_GOTH_ARROW, // EntitySniperOfGothArrow
     E_IMP,                  // EntityImp
     E_IMP_SMOKE,            // EntityImpSmoke
     E_CLOUDS,               // EntityClouds
@@ -71,8 +74,8 @@ enum EntityID {
     E_SPIKES_DUST,          // EntitySpikesDust
     E_SPIKES_DAMAGE,        // EntitySpikesDamage
     E_BREAKABLE_DEBRIS,     // EntityBreakableDebris
-    E_UNK_32,               // func_us_801C6040
-    E_UNK_33,               // EntityRdaiUnk33
+    E_BLACK_PANTHER,        // EntityBlackPanther
+    E_BALLOON_POD,          // EntityBalloonPod
     E_UNK_34,               // EntityImpDeathParticle
     NUM_ENTITIES,
 };

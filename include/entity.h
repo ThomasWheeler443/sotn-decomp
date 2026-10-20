@@ -4374,16 +4374,6 @@ typedef struct {
 } ET_RdaiArcher;
 
 typedef struct {
-    /* 0x7C */ u32 unk7C[8];
-    /* 0x9C */ s32 accelY;
-} ET_801AE414;
-
-typedef struct {
-    /* 0x7C */ u32 unk7C[8];
-    /* 0x9C */ struct Entity* parent;
-} ET_801AEFE0;
-
-typedef struct {
     /* 0x7C */ Primitive* prim1;
     /* 0x80 */ Primitive* prim2;
     /* 0x84 */ Primitive* prim3;
@@ -4622,12 +4612,64 @@ typedef struct {
     /* 0x88 */ s16 halfWidth;
 } ET_801A460C;
 
+typedef struct {
+    /* 0x7C */ u32 : 32;
+    /* 0x80 */ s16 attackDelay;
+    /* 0x82 */ s16 timer;
+    /* 0x83 */ u8 facingbool;
+    /* 0x88 */ u32 : 32;
+    /* 0x8C */ u32 : 32;
+    /* 0x90 */ u32 : 32;
+    /* 0x94 */ u32 : 32;
+    /* 0x98 */ u32 : 32;
+    /* 0x9C */ s32 accelY; // death parts
+} ET_Lion;
+
+typedef struct {
+    /* 0x7C */ struct Primitive* prim;
+    /* 0x80 */ u32 timer;
+    /* 0x84 */ u32 : 32;
+    /* 0x88 */ u32 : 32;
+    /* 0x8C */ u32 : 32;
+    /* 0x90 */ u8 flapCount;
+    /* 0x91 */ u8 flurryActive;
+    /* 0x92 */ u8 attackCount;
+    /* 0x93 */ u8 : 8;
+    /* 0x94 */ s32 idleTimer;
+    /* 0x98 */ s16 flurryArrowCount;
+    /* 0x9A */ s16 clothSwayAngle;
+} ET_SniperOfGoth;
+
+typedef struct {
+    /* 0x7C */ u32 : 32;
+    /* 0x80 */ u32 timer;
+    /* 0x84 */ u32 : 32;
+    /* 0x88 */ u32 : 32;
+    /* 0x8C */ u32 : 32;
+    /* 0x90 */ u32 : 32;
+    /* 0x94 */ s16 hitPlayerX;
+    /* 0x96 */ s16 hitPlayerY;
+} ET_SniperOfGothArrow;
+
+typedef struct {
+    /* 0x7C */ u32 : 32;
+    /* 0x80 */ s16 timer;
+    /* 0x82 */ s16 armAngle;
+    /* 0x84 */ u8 turningAround;
+    /* 0x85 */ u8 transformed;
+    /* 0x86 */ u8 hasGravity; // Death parts
+    /* 0x88 */ u32 : 32;
+    /* 0x8C */ u32 : 32;
+    /* 0x90 */ u32 : 32;
+    /* 0x94 */ u32 : 32;
+    /* 0x98 */ u32 : 32;
+    /* 0x9C */ struct Entity* parent;
+} ET_TinMan;
+
 typedef union { // offset=0x7C
     struct Primitive* prim;
     ET_Placeholder ILLEGAL;
     ET_RdaiArcher rdaiArcher;
-    ET_801AE414 et_801AE414;
-    ET_801AEFE0 et_801AEFE0;
     ET_TimerOnly timer;
     ET_UTimerOnly utimer;
     ET_EntFactory factory;
@@ -5015,6 +5057,10 @@ typedef union { // offset=0x7C
     ET_Malachi malachi;
     ET_801A460C et_801A460C;
     ET_GhostDancer ghostDancer;
+    ET_Lion lion;
+    ET_SniperOfGoth sniperOfGoth;
+    ET_SniperOfGothArrow sniperOfGothArrow;
+    ET_TinMan tinman;
 } Ext;
 
 SYNC_FIELD(ET_Player, ET_Weapon, anim);

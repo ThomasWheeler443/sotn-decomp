@@ -10,7 +10,7 @@ enum Palettes {
     PAL_NONE,
     PAL_LION = 0x200,
     PAL_TIN_MAN = 0x206,
-    PAL_UNK_20F = 0x20F,
+    PAL_CANDLE_TABLE = 0x20F,
     PAL_BREAKABLE = 0x213,
     PAL_SCHMOO = 0x21B,
     PAL_SCARECROW = 0x21E,
@@ -51,14 +51,14 @@ typedef enum EntityID {
     E_DISTANT_SHELVES,      // EntityDistantBookshelves
     E_THICK_BOOKCASE,       // EntityThickBookcase
     E_UNK_1B,               // func_us_801AE7AC_from_lib
-    E_UNK_1C,               // func_us_801ADBE8
-    E_HARPY_KICK,           // EntityHarpyKick
-    E_UNK_1E,               // func_us_801AE414
-    E_UNK_1F,               // func_us_801AE534
-    E_UNK_20,               // func_us_801AED4C
-    E_UNK_21,               // func_us_801D8D44_from_no4
-    E_UNK_22,               // func_us_801AEFE0
-    E_UNK_23,               // func_us_801AF11C
+    E_LION,                 // EntityLion
+    E_LION_ATTACK,          // EntityLionAttack
+    E_LION_DEATH_PARTS,     // EntityLionDeathParts
+    E_TINMAN,               // EntityTinMan
+    E_TINMAN_ARM,           // EntityTinManArm
+    E_TINMAN_PROJECTILE,    // EntityTinManProjectile
+    E_TINMAN_SMOKE,         // EntityTinManSmoke
+    E_TINMAN_DEATH_PARTS,   // EntityTinManDeathParts
     E_UNK_24,               // func_us_801AF448
     E_UNK_25,               // func_us_801AF9E8
     E_EXPLODE_PUFF_OPAQUE,  // EntityExplosionPuffOpaque

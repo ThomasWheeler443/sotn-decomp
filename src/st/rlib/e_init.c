@@ -28,14 +28,14 @@ void EntityBackgroundShadow(Entity* self);
 void EntityDistantBookshelves(Entity* self);
 void EntityThickBookcase(Entity* self);
 void func_us_801AE7AC_from_lib(Entity* self);
-void func_us_801ADBE8(Entity* self);
-void EntityHarpyKick(Entity* self);
-void func_us_801AE414(Entity* self);
-void func_us_801AE534(Entity* self);
-void func_us_801AED4C(Entity* self);
-void func_us_801D8D44_from_no4(Entity* self);
-void func_us_801AEFE0(Entity* self);
-void func_us_801AF11C(Entity* self);
+void EntityLion(Entity* self);
+void EntityLionAttack(Entity* self);
+void EntityLionDeathParts(Entity* self);
+void EntityTinMan(Entity* self);
+void EntityTinManArm(Entity* self);
+void EntityTinManProjectile(Entity* self);
+void EntityTinManSmoke(Entity* self);
+void EntityTinManDeathParts(Entity* self);
 void func_us_801AF448(Entity* self);
 void func_us_801AF9E8(Entity* self);
 void EntityExplosionPuffOpaque(Entity* self);
@@ -71,14 +71,14 @@ PfnEntityUpdate EntityUpdates[] = {
     EntityDistantBookshelves,
     EntityThickBookcase,
     func_us_801AE7AC_from_lib,
-    func_us_801ADBE8,
-    EntityHarpyKick,
-    func_us_801AE414,
-    func_us_801AE534,
-    func_us_801AED4C,
-    func_us_801D8D44_from_no4,
-    func_us_801AEFE0,
-    func_us_801AF11C,
+    EntityLion,
+    EntityLionAttack,
+    EntityLionDeathParts,
+    EntityTinMan,
+    EntityTinManArm,
+    EntityTinManProjectile,
+    EntityTinManSmoke,
+    EntityTinManDeathParts,
     func_us_801AF448,
     func_us_801AF9E8,
     EntityExplosionPuffOpaque,
@@ -99,14 +99,14 @@ EInit g_EInitLockCamera = {ANIMSET_DRA(0), 0x00, 0x00, PAL_NONE, ENEMY_OBTAINABL
 EInit g_EInitCommon = {ANIMSET_DRA(0), 0x00, 0x00, PAL_NONE, ENEMY_COMMON};
 EInit g_EInitDamageNum = {ANIMSET_DRA(0), 0x00, 0x00, PAL_NONE, ENEMY_COMMON};
 EInit g_EInitLion = {ANIMSET_OVL(3), 0x01, 0x50, PAL_LION, ENEMY_LION};
-EInit D_us_8018064C = {ANIMSET_OVL(0), 0x00, 0x00, PAL_NONE, ENEMY_LION_UNK_107};
-EInit D_us_80180658 = {ANIMSET_OVL(3), 0x00, 0x50, PAL_LION, ENEMY_PARTICLE};
+EInit g_EInitLionAttack = {ANIMSET_OVL(0), 0x00, 0x00, PAL_NONE, ENEMY_LION_UNK_107};
+EInit g_EInitLionDeathParts = {ANIMSET_OVL(3), 0x00, 0x50, PAL_LION, ENEMY_PARTICLE};
 EInit g_EInitTinman = {ANIMSET_OVL(4), 0x01, 0x53, PAL_TIN_MAN, ENEMY_TIN_MAN};
-EInit D_us_80180670 = {ANIMSET_OVL(4), 0x05, 0x53, PAL_TIN_MAN, ENEMY_TIN_MAN_UNK_109};
-EInit D_us_8018067C = {ANIMSET_OVL(4), 0x00, 0x53, PAL_TIN_MAN, ENEMY_TIN_MAN_UNK_10A};
-EInit D_us_80180688 = {ANIMSET_OVL(4), 0x00, 0x53, PAL_TIN_MAN, ENEMY_PARTICLE};
+EInit g_EInitTinManArm = {ANIMSET_OVL(4), 0x05, 0x53, PAL_TIN_MAN, ENEMY_TIN_MAN_ARM};
+EInit g_EInitTinManProjectile = {ANIMSET_OVL(4), 0x00, 0x53, PAL_TIN_MAN, ENEMY_TIN_MAN_PROJECTILE};
+EInit g_EInitTinManDecoration = {ANIMSET_OVL(4), 0x00, 0x53, PAL_TIN_MAN, ENEMY_PARTICLE};
 EInit g_EInitScarecrow = {ANIMSET_OVL(5), 0x00, 0x54, PAL_SCARECROW, ENEMY_SCARECROW};
 EInit D_us_801806A0 = {ANIMSET_OVL(5), 0x00, 0x54, PAL_SCARECROW, ENEMY_INTERACTABLE};
 EInit g_EInitSchmoo = {ANIMSET_OVL(5), 0x08, 0x54, PAL_SCHMOO, ENEMY_SCHMOO};
-EInit g_EInitCandleTable = {ANIMSET_OVL(6), 0x00, 0x50, PAL_UNK_20F, ENEMY_INTERACTABLE};
+EInit g_EInitCandleTable = {ANIMSET_OVL(6), 0x00, 0x50, PAL_CANDLE_TABLE, ENEMY_INTERACTABLE};
 // clang-format on
