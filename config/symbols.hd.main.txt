@@ -25,3 +25,4 @@ CdInit = 0x8001EC18;
 CdSearchFile = 0x8001EEB4;
 g_GameState = 0x800514A4;
 g_UseDisk = 0x800AD490;
+g_MainGame = 0x800B0000;
