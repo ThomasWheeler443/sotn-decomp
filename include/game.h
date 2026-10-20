@@ -515,7 +515,7 @@ typedef struct {
 #define SPU_VOICE_NUM 24
 
 typedef enum {
-    Game_Init, 
+    Game_Init,
     Game_Title,
     Game_Play,
     Game_GameOver,

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-//! O=1 
+//! O=1
 #include "common.h"
 #include "game.h"
 
@@ -26,17 +26,17 @@ void main(void) {
         read(main_fd, (void*)DRA_PRG_PTR, 0x120000);
         close(main_fd);
         g_UseDisk = 0;
-    } 
-    else {
+    } else {
     main_search_loop_1:
-        while (!CdSearchFile(&main_cdlFile, "\\DRA.BIN;1")) {}
+        while (!CdSearchFile(&main_cdlFile, "\\DRA.BIN;1")) {
+        }
 
         *main_cdlMode = CdlModeSpeed | CdlModeSpeedNormal;
 
         CdControl(CdlSetmode, main_cdlMode, NULL);
         CdControl(CdlSetloc, &main_cdlFile, NULL);
         CdRead(0x240, (u32*)DRA_PRG_PTR, CdlModeSpeed | CdlModeSpeedNormal);
-        
+
         // block until read is complete
         main_fd = CdReadSync(CdlSync, NULL);
         if (main_fd < 0) {

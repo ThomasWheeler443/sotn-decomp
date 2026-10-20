@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
 #include "common.h"
 
 INCLUDE_ASM("main/nonmatchings/584C", ResetCallback);
@@ -636,11 +637,9 @@ INCLUDE_ASM("main/nonmatchings/584C", func_80022560);
 
 INCLUDE_ASM("main/nonmatchings/584C", func_80022660);
 
-void func_80022818(void) {
-}
+void func_80022818(void) {}
 
-void func_80022820(void) {
-}
+void func_80022820(void) {}
 
 INCLUDE_ASM("main/nonmatchings/584C", func_80022828);
 
@@ -672,8 +671,7 @@ INCLUDE_ASM("main/nonmatchings/584C", func_800245F4);
 
 INCLUDE_ASM("main/nonmatchings/584C", func_800246E0);
 
-void func_80024714(void) {
-}
+void func_80024714(void) {}
 
 INCLUDE_ASM("main/nonmatchings/584C", func_8002471C);
 
