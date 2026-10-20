@@ -1,8 +1,8 @@
 version: hd
 files:
   - target: disks/pspeu/PSP_GAME/USRDIR/res/ps/hdbin/main.exe
-    asset_path: assets/main/
-    src_path: src/main/hd
+    asset_path: assets/main
+    src_path: src/main
     splat_config_path: config/splat.hd.main.yaml
     segments:
       - start: 0x00000800
