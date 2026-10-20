@@ -5,7 +5,7 @@ options:
   build_path:   build/hd
   target_path:  disks/pspeu/PSP_GAME/USRDIR/res/ps/hdbin/main.exe
   asm_path:     asm/hd/main
-  asset_path:   assets/main/hd
+  asset_path:   assets/main
   src_path:     src/main/hd
   ld_script_path: build/hd/main.ld
   compiler:     GCC
@@ -34,10 +34,30 @@ segments:
     align: 4
     subalign: 4
     subsegments:
-      - [0x800, rodata]
+      - [0x800, .rodata, main]
+      - [0x820, rodata]
       - [0x1534, asm, psxsdk/2mbyte]
-      - [0x15F8, c]
-      - [0x1EF1C, data]
+      - [0x15F8, c, main]
+      - [0x1760, c, psxsdk/libgpu/sys]
+      - [0x4464, c, psxsdk/libgpu/prim]
+      - [0x4B44, c, psxsdk/libgpu/font]
+      - [0x554C, c, psxsdk/libgpu/ext]
+      - [0x576C, c, ../psxsdk/libapi/a81]
+      - [0x577C, c, ../psxsdk/libapi/a51]
+      - [0x578C, c, ../psxsdk/libapi/a54]
+      - [0x579C, c, ../psxsdk/libapi/c73]
+      - [0x57AC, c, ../psxsdk/libapi/a53]
+      - [0x57BC, c, ../psxsdk/libapi/a65]
+      - [0x57CC, c, ../psxsdk/libapi/a91]
+      - [0x57DC, c, ../psxsdk/libapi/c57]
+      - [0x57EC, c, ../psxsdk/libapi/a67]
+      - [0x57FC, c, ../psxsdk/libapi/c66]
+      - [0x580C, c, ../psxsdk/libapi/c67]
+      - [0x581C, c, ../psxsdk/libapi/a52]
+      - [0x582C, c, ../psxsdk/libapi/a50]
+      - [0x583C, c, ../psxsdk/libapi/a66]
+      - [0x584C, c]
+      - [0x1ECC0, data]
       - [0x3819C, bss]
   - [0x9E800]
 
