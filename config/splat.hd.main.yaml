@@ -59,5 +59,7 @@ segments:
       - [0x584C, c]
       - [0x1ECC0, data]
       - [0x3819C, bss]
+      - [0x381CC, .bss, main]
+      - [0x381EC, bss]
   - [0x9E800]
 

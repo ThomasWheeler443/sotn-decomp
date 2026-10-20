@@ -294,6 +294,11 @@ extern u8 D_psp_08D97C40[];
 #define SIM_PTR 0x80280000
 #endif
 
+#ifdef VERSION_HD
+#undef DRA_PRG_PTR
+#define DRA_PRG_PTR 0x800B0000
+#endif
+
 // used with various equipment, enemy resistances, etc
 typedef enum Elements {
     ELEMENT_NONE = 0,
@@ -510,7 +515,7 @@ typedef struct {
 #define SPU_VOICE_NUM 24
 
 typedef enum {
-    Game_Init,
+    Game_Init, 
     Game_Title,
     Game_Play,
     Game_GameOver,
