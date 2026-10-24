@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 #include "rdai.h"
 
+static s32 g_Rbo3DoorFlag = 0;
+
 extern EInit g_Rbo3DoorInit;
-extern s32 g_Rbo3DoorFlag;
 #if defined(VERSION_PSP)
-extern s32 E_ID(UNK_2C);
+extern s32 E_ID(BOSS_DOOR);
 #endif
 
-void EntityRbo3Door(Entity* self) {
+void EntityBossRoomDoor(Entity* self) {
     s32 i;
     s32 fg;
     s32 fgIndex;
@@ -33,7 +34,7 @@ void EntityRbo3Door(Entity* self) {
         }
 
         next = self + 1;
-        CreateEntityFromEntity(E_ID(UNK_2C), self, next);
+        CreateEntityFromEntity(E_ID(BOSS_DOOR), self, next);
 
         next->params = 2;
         next->posY.i.hi = 96;

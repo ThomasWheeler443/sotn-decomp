@@ -19,6 +19,8 @@ enum Palettes {
     PAL_HIPPOGRYPH = 0x200,
     PAL_STAINED_GLASS_LIGHT = 0x204,
     PAL_STAINED_GLASS_BG_LIGHT = 0x205,
+    PAL_PORTRAIT_ALUCARD = 0x210,
+    PAL_PORTRAIT_MARIA = 0x218,
 };
 
 typedef enum EntityID {
@@ -44,7 +46,7 @@ typedef enum EntityID {
     E_UNK_ID13,                 // EntityUnkId13
     E_EXPLOSION_VARIANTS,       // EntityExplosionVariants
     E_GREY_PUFF,                // EntityGreyPuff
-    E_UNK_16,                   // func_801A8620
+    E_CAMERA_BOUNDS,            // EntityCameraBounds
     E_STAINED_GLASS,            // EntityStainedGlass
     E_STAINED_GLASS_BACKGROUND, // EntityStainedGlassBackground
     E_BLOCK,                    // EntityBlock
@@ -56,20 +58,27 @@ typedef enum EntityID {
     E_CLOUDS,                   // EntityClouds
     E_BACKGROUND_SKY_LAND,      // EntityBackgroundSkyLand
     E_RBO3DOOR,                 // EntityRbo3Door
-    E_UNK_22,                   // func_us_801A1C14
-    E_UNK_23,                   // func_us_801A425C
+    E_HIPPOGRYPH,               // EntityHippogryph
+    E_UNK_23,                   // EntityHippogryphHitbox
     E_UNK_24,                   // EntityFireDamageHitbox
-    E_UNK_25,                   // func_us_801A3FD4
+    E_HIPPOGRYPH_EGG,           // EntityHippogryphEgg
     E_UNK_26,                   // func_us_801A3E78
-    E_UNK_27,                   // func_us_801A3B88
+    E_FIRE_BREATH,              // EntityFireBreath
     E_LIFE_UP_SPAWN,            // EntityLifeUpSpawn
-    E_UNK_29,                   // func_us_801A4494
+    E_PLAY_BOSS_MUSIC,          // EntityPlayBossMusic
     E_CUTSCENE,                 // EntityCutscene
-    E_UNK_2B,                   // func_us_801A5F88
+    E_CUTSCENE_STAGE,           // EntityCutsceneStage
     E_UNK_2C,                   // func_us_801A62B4
     E_UNK_2D,                   // func_801B1D68
     E_UNK_2E,                   // RicSetDeadPrologue
     NUM_ENTITIES,
+};
+
+enum BossMgrState {
+    BOSS_MGR_IDLE = 0,       // initial state, fight not yet engaged
+    BOSS_MGR_FIGHT_ON = 1,   // boss battle started
+    BOSS_MGR_DEFEAT = 2,     // triggered as soon as the boss is defeated
+    BOSS_MGR_TERMINATED = 4, // boss is dead, entity got destroyed
 };
 
 #ifdef VERSION_PSP
@@ -78,7 +87,7 @@ extern s32 E_ID(LOCK_CAMERA);
 extern s32 E_ID(UNK_ID13);
 extern s32 E_ID(EXPLOSION_VARIANTS);
 extern s32 E_ID(GREY_PUFF);
-extern s32 E_ID(UNK_16);
+extern s32 E_ID(CAMERA_BOUNDS);
 extern s32 E_ID(STAINED_GLASS);
 extern s32 E_ID(STAINED_GLASS_BACKGROUND);
 extern s32 E_ID(BLOCK);
@@ -90,19 +99,22 @@ extern s32 E_ID(STAIRCASE);
 extern s32 E_ID(CLOUDS);
 extern s32 E_ID(BACKGROUND_SKY_LAND);
 extern s32 E_ID(RBO3DOOR);
-extern s32 E_ID(UNK_22);
+extern s32 E_ID(HIPPOGRYPH);
 extern s32 E_ID(UNK_23);
 extern s32 E_ID(UNK_24);
-extern s32 E_ID(UNK_25);
+extern s32 E_ID(HIPPOGRYPH_EGG);
 extern s32 E_ID(UNK_26);
-extern s32 E_ID(UNK_27);
+extern s32 E_ID(FIRE_BREATH);
 extern s32 E_ID(LIFE_UP_SPAWN);
-extern s32 E_ID(UNK_29);
+extern s32 E_ID(PLAY_BOSS_MUSIC);
 extern s32 E_ID(CUTSCENE);
-extern s32 E_ID(UNK_2B);
+extern s32 E_ID(CUTSCENE_STAGE);
 extern s32 E_ID(UNK_2C);
 extern s32 E_ID(UNK_2D);
 extern s32 E_ID(UNK_2E);
 #endif
+
+extern s32 D_us_801806DC;
+extern s32 g_BossMgrState;
 
 #endif // BO5_H

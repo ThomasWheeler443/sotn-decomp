@@ -4313,12 +4313,6 @@ typedef struct {
     /* 0xAE */ u8 unkAE;
 } ET_Gorgon;
 
-// func_us_801A3FD4 (bo5, bo5_psp)
-typedef struct {
-    /* 0x7C */ u8 timer;
-    /* 0x7D */ u8 rotateDir;
-} ET_801A3FD4;
-
 // func_us_801C03E8 (bo6)
 typedef struct {
     /* 0x7C */ s16 savedHitboxState;
@@ -4351,11 +4345,27 @@ typedef struct {
     /* 0xA0 */ struct Entity* source;
 } ET_801980E4;
 
-// func_us_801A19CC (bo5)
 typedef struct {
-    /* 0x7C */ u8 unk7C;
+    /* 0x7C */ struct Entity* target;
+} ET_CutsceneStage;
+
+typedef struct {
+    /* 0x7C */ u8 flyTimer;
     /* 0x7D */ u8 unk7D;
-} ET_801A19CC;
+    /* 0x7E */ u8 zPriority;
+    /* 0x7F */ u8 : 8;
+    /* 0x80 */ Primitive* prim;
+    /* 0x84 */ s32 : 32;
+    /* 0x88 */ Primitive* prim2;
+    /* 0x8C */ s32 unk8C;
+    /* 0x90 */ s32 : 32;
+    /* 0x94 */ struct Entity* unk94;
+} ET_Hippogryph;
+
+typedef struct {
+    /* 0x7C */ u8 timer;
+    /* 0x7D */ u8 rotateDir;
+} ET_HippogryphEgg;
 
 // func_us_8019921C (rbo8, rbo8_psp)
 typedef struct {
@@ -4369,8 +4379,16 @@ typedef struct {
     /* 0x7C */ s32 : 32;
     /* 0x80 */ s16 timer;
     /* 0x82 */ s16 : 16;
-    /* 0x84 */ s8 : 8;
+    /* 0x84 */ u8 accelDir;
     /* 0x85 */ u8 mode;
+    /* 0x86 */ s16 : 16;
+    /* 0x88 */ s16 wheelBob;
+    /* 0x8C */ s32 : 32;
+    /* 0x90 */ s32 : 32;
+    /* 0x94 */ s16 impaleOffX;
+    /* 0x96 */ s16 impaleOffY;
+    /* 0x98 */ s32 : 32;
+    /* 0x9C */ struct Entity* arrowArm;
 } ET_RdaiArcher;
 
 typedef struct {
@@ -4665,6 +4683,13 @@ typedef struct {
     /* 0x98 */ u32 : 32;
     /* 0x9C */ struct Entity* parent;
 } ET_TinMan;
+
+typedef struct {
+    /* 0x7C */ u32 : 32;
+    /* 0x80 */ s16 turnAroundTimer;
+    /* 0x84 */ s32 prevXVel;
+    /* 0x88 */ s32 prevYVel;
+} ET_Scarecrow;
 
 typedef union { // offset=0x7C
     struct Primitive* prim;
@@ -5029,11 +5054,12 @@ typedef union { // offset=0x7C
     ET_Dodo dodo;
     ET_B0_Unk b0Unk;
     ET_801B0930 et_801B0930;
-    ET_801A3FD4 et_801A3FD4;
     ET_801C03E8 et_801C03E8;
     ET_Shaft shaft;
     ET_801980E4 et_801980E4;
-    ET_801A19CC et_801A19CC;
+    ET_Hippogryph hippogryph;
+    ET_HippogryphEgg hippogryphEgg;
+    ET_CutsceneStage cutsceneStage;
     ET_8019921C et_8019921C;
     ET_OlroxDrool olroxDrool;
     ET_OlroxLaser olroxLaser;
@@ -5061,6 +5087,7 @@ typedef union { // offset=0x7C
     ET_SniperOfGoth sniperOfGoth;
     ET_SniperOfGothArrow sniperOfGothArrow;
     ET_TinMan tinman;
+    ET_Scarecrow scarecrow;
 } Ext;
 
 SYNC_FIELD(ET_Player, ET_Weapon, anim);
